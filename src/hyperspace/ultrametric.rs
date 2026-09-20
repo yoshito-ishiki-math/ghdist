@@ -216,7 +216,7 @@ impl<'config> UltrametricRecursor<'config> {
         // If counts agree each target must receive exactly one source block.
         let mut singleton_choices = remaining;
         let mut subset = if singletons_only {
-            remaining & remaining.wrapping_neg()
+            remaining.isolate_lowest_one()
         } else {
             remaining
         };
@@ -273,7 +273,7 @@ impl<'config> UltrametricRecursor<'config> {
             }
             if singletons_only {
                 singleton_choices &= singleton_choices - 1;
-                subset = singleton_choices & singleton_choices.wrapping_neg();
+                subset = singleton_choices.isolate_lowest_one();
             } else {
                 subset = (subset - 1) & remaining;
             }

@@ -1,6 +1,6 @@
 # ghdist v0.2.0
 
-Initial standalone public release candidate for exact finite
+Initial standalone public release for exact finite
 Gromov–Hausdorff and Hausdorff hyperspace computations.
 
 - Named JSON distance matrices, exact fractions/decimals, and singleton spaces.

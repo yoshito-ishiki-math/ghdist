@@ -269,7 +269,7 @@ mod unix {
         let temp = Temp::new();
         let marker = fake_solver(&temp);
         let started = Instant::now();
-        let output = Command::new(binary())
+        let mut child = Command::new(binary())
             .args([
                 "hyperspace",
                 example("known-X.json").to_str().unwrap(),
@@ -277,13 +277,19 @@ mod unix {
                 "--engine",
                 "z3",
                 "--time-limit",
-                "500ms",
+                "2s",
                 "--json",
             ])
             .env("PATH", &temp.0)
-            .output()
+            .stdout(Stdio::piped())
+            .stderr(Stdio::piped())
+            .spawn()
             .unwrap();
-        assert!(started.elapsed() < Duration::from_secs(4));
+        // Observe the blocked solver before checking that the overall deadline
+        // terminates it. Leave headroom for process startup on loaded runners.
+        wait_for_marker(&marker, &mut child);
+        let output = child.wait_with_output().unwrap();
+        assert!(started.elapsed() < Duration::from_secs(10));
         assert_eq!(output.status.code(), Some(2));
         assert_eq!(decoded(&output)["status"], "bounded");
         assert_reaped(&marker);

@@ -11,7 +11,7 @@ distortion, retain bounds when interrupted, and process batches of pairs.
 
 ## Install and try
 
-Install Rust and Cargo, then run from a source checkout:
+Install Rust 1.97 or newer and Cargo, then run from a source checkout:
 
 ```sh
 cargo install --path . --locked --bin ghdist

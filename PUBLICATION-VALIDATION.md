@@ -57,3 +57,16 @@ Remote CI has not run during local preparation.
 
 See [VALIDATION.md](VALIDATION.md) for the finite computational scope. A passing
 test suite does not constitute formal mathematical verification.
+
+## Publication follow-up
+
+Date: 2026-09-20T13:25:04+09:00
+
+The first GitHub run used Rust 1.98 and flagged two manual lowest-set-bit
+expressions in Clippy; the Linux exported-source tests with real Z3 passed.
+Those expressions now use the equivalent stable `u64::isolate_lowest_one`
+method, and Cargo/installation documentation declare Rust 1.97 or newer.
+The deadline lifecycle test also waits for the blocked solver to start and
+allows process-startup headroom on loaded machines. After both changes, all
+40 tests, formatting, and Clippy passed on Rust 1.97.1. Remote checks are
+rerun for this correction.

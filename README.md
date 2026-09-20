@@ -6,7 +6,7 @@
 
 ## 導入
 
-Rust/Cargo が必要です。Rust 1.97.1、macOS で検証しています。このフォルダで次を実行すると、短いコマンド名 `ghdist` を利用できます。
+Rust 1.97 以降と Cargo が必要です。Rust 1.97.1、macOS で検証しています。このフォルダで次を実行すると、短いコマンド名 `ghdist` を利用できます。
 
 ```sh
 cargo install --path . --locked --bin ghdist
