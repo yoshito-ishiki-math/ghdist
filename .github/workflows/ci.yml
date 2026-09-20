@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Rust (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Install stable Rust
+        run: rustup toolchain install stable --profile minimal --component rustfmt --component clippy
+      - run: cargo +stable fmt --check
+      - run: cargo +stable clippy --all-targets --locked -- -D warnings
+      - name: Test without requiring Z3
+        run: cargo +stable test --release --locked
+
+  z3-and-package:
+    name: Z3 and source package
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - run: rustup toolchain install stable --profile minimal
+      - name: Install optional solver
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y z3
+          z3 --version
+      - name: Prepare the public source package
+        run: python3 tools/prepare_publication.py --output-dir "$RUNNER_TEMP/ghdist-source"
+      - name: Test the exported source, including real Z3
+        run: cargo +stable test --manifest-path "$RUNNER_TEMP/ghdist-source/ghdist/Cargo.toml" --release --locked -- --include-ignored

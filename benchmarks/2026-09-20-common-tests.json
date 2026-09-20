@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-20T02:13:35.259705+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "method": "Same 12 original tests, including Z3; single test thread; alternating order; process wall time; no warmup.",
+  "args": [
+    "--exact",
+    "tests::exact_solver_matches_brute_force_on_small_cases",
+    "tests::every_small_three_point_lazy_result_matches_explicit_search",
+    "tests::known_four_point_pair_matches_python_oracle",
+    "tests::dilation_oracle_matches_every_explicit_small_hyperspace_distance",
+    "tests::ultrametric_decomposition_matches_explicit_hyperspace_search",
+    "tests::all_four_point_ultrametric_types_through_level_three_match_explicit_search",
+    "tests::structural_filter_accepts_certified_hyperspace_optima",
+    "tests::equilateral_lazy_formula_matches_unequal_explicit_cardinalities",
+    "tests::order_twenty_identity_uses_no_explicit_hyperspace",
+    "tests::optional_z3_backend_resolves_a_hard_five_point_threshold",
+    "tests::two_point_hyperspace_is_equilateral",
+    "tests::every_recorded_family_builds_through_order_twenty",
+    "--include-ignored",
+    "--test-threads",
+    "1"
+  ],
+  "repetitions": 3,
+  "binary_sha256": {
+    "baseline": "5c086f8fbde9bc9ea7709e550645f64dc01475e20b107f1551711baef9b468fc",
+    "candidate": "fb81d34d3d5fe2bf5300dd0e0fded8097342b604fa5fa76d8a6435f961fc0e00"
+  },
+  "samples": {
+    "baseline": [
+      {
+        "wall_seconds": 13.691854084027,
+        "stdout": "\nrunning 12 tests\ntest tests::all_four_point_ultrametric_types_through_level_three_match_explicit_search ... ok\ntest tests::dilation_oracle_matches_every_explicit_small_hyperspace_distance ... ok\ntest tests::equilateral_lazy_formula_matches_unequal_explicit_cardinalities ... ok\ntest tests::every_recorded_family_builds_through_order_twenty ... ok\ntest tests::every_small_three_point_lazy_result_matches_explicit_search ... ok\ntest tests::exact_solver_matches_brute_force_on_small_cases ... ok\ntest tests::known_four_point_pair_matches_python_oracle ... ok\ntest tests::optional_z3_backend_resolves_a_hard_five_point_threshold ... ok\ntest tests::order_twenty_identity_uses_no_explicit_hyperspace ... ok\ntest tests::structural_filter_accepts_certified_hyperspace_optima ... ok\ntest tests::two_point_hyperspace_is_equilateral ... ok\ntest tests::ultrametric_decomposition_matches_explicit_hyperspace_search ... ok\n\ntest result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 11.77s\n\n"
+      },
+      {
+        "wall_seconds": 11.49349462497048,
+        "stdout": "\nrunning 12 tests\ntest tests::all_four_point_ultrametric_types_through_level_three_match_explicit_search ... ok\ntest tests::dilation_oracle_matches_every_explicit_small_hyperspace_distance ... ok\ntest tests::equilateral_lazy_formula_matches_unequal_explicit_cardinalities ... ok\ntest tests::every_recorded_family_builds_through_order_twenty ... ok\ntest tests::every_small_three_point_lazy_result_matches_explicit_search ... ok\ntest tests::exact_solver_matches_brute_force_on_small_cases ... ok\ntest tests::known_four_point_pair_matches_python_oracle ... ok\ntest tests::optional_z3_backend_resolves_a_hard_five_point_threshold ... ok\ntest tests::order_twenty_identity_uses_no_explicit_hyperspace ... ok\ntest tests::structural_filter_accepts_certified_hyperspace_optima ... ok\ntest tests::two_point_hyperspace_is_equilateral ... ok\ntest tests::ultrametric_decomposition_matches_explicit_hyperspace_search ... ok\n\ntest result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 11.48s\n\n"
+      },
+      {
+        "wall_seconds": 11.56749874993693,
+        "stdout": "\nrunning 12 tests\ntest tests::all_four_point_ultrametric_types_through_level_three_match_explicit_search ... ok\ntest tests::dilation_oracle_matches_every_explicit_small_hyperspace_distance ... ok\ntest tests::equilateral_lazy_formula_matches_unequal_explicit_cardinalities ... ok\ntest tests::every_recorded_family_builds_through_order_twenty ... ok\ntest tests::every_small_three_point_lazy_result_matches_explicit_search ... ok\ntest tests::exact_solver_matches_brute_force_on_small_cases ... ok\ntest tests::known_four_point_pair_matches_python_oracle ... ok\ntest tests::optional_z3_backend_resolves_a_hard_five_point_threshold ... ok\ntest tests::order_twenty_identity_uses_no_explicit_hyperspace ... ok\ntest tests::structural_filter_accepts_certified_hyperspace_optima ... ok\ntest tests::two_point_hyperspace_is_equilateral ... ok\ntest tests::ultrametric_decomposition_matches_explicit_hyperspace_search ... ok\n\ntest result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 11.55s\n\n"
+      }
+    ],
+    "candidate": [
+      {
+        "wall_seconds": 0.14220054203178734,
+        "stdout": "\nrunning 12 tests\ntest tests::all_four_point_ultrametric_types_through_level_three_match_explicit_search ... ok\ntest tests::dilation_oracle_matches_every_explicit_small_hyperspace_distance ... ok\ntest tests::equilateral_lazy_formula_matches_unequal_explicit_cardinalities ... ok\ntest tests::every_recorded_family_builds_through_order_twenty ... ok\ntest tests::every_small_three_point_lazy_result_matches_explicit_search ... ok\ntest tests::exact_solver_matches_brute_force_on_small_cases ... ok\ntest tests::known_four_point_pair_matches_python_oracle ... ok\ntest tests::optional_z3_backend_resolves_a_hard_five_point_threshold ... ok\ntest tests::order_twenty_identity_uses_no_explicit_hyperspace ... ok\ntest tests::structural_filter_accepts_certified_hyperspace_optima ... ok\ntest tests::two_point_hyperspace_is_equilateral ... ok\ntest tests::ultrametric_decomposition_matches_explicit_hyperspace_search ... ok\n\ntest result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 7 filtered out; finished in 0.14s\n\n"
+      },
+      {
+        "wall_seconds": 0.14102704206015915,
+        "stdout": "\nrunning 12 tests\ntest tests::all_four_point_ultrametric_types_through_level_three_match_explicit_search ... ok\ntest tests::dilation_oracle_matches_every_explicit_small_hyperspace_distance ... ok\ntest tests::equilateral_lazy_formula_matches_unequal_explicit_cardinalities ... ok\ntest tests::every_recorded_family_builds_through_order_twenty ... ok\ntest tests::every_small_three_point_lazy_result_matches_explicit_search ... ok\ntest tests::exact_solver_matches_brute_force_on_small_cases ... ok\ntest tests::known_four_point_pair_matches_python_oracle ... ok\ntest tests::optional_z3_backend_resolves_a_hard_five_point_threshold ... ok\ntest tests::order_twenty_identity_uses_no_explicit_hyperspace ... ok\ntest tests::structural_filter_accepts_certified_hyperspace_optima ... ok\ntest tests::two_point_hyperspace_is_equilateral ... ok\ntest tests::ultrametric_decomposition_matches_explicit_hyperspace_search ... ok\n\ntest result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 7 filtered out; finished in 0.14s\n\n"
+      },
+      {
+        "wall_seconds": 0.1427942500449717,
+        "stdout": "\nrunning 12 tests\ntest tests::all_four_point_ultrametric_types_through_level_three_match_explicit_search ... ok\ntest tests::dilation_oracle_matches_every_explicit_small_hyperspace_distance ... ok\ntest tests::equilateral_lazy_formula_matches_unequal_explicit_cardinalities ... ok\ntest tests::every_recorded_family_builds_through_order_twenty ... ok\ntest tests::every_small_three_point_lazy_result_matches_explicit_search ... ok\ntest tests::exact_solver_matches_brute_force_on_small_cases ... ok\ntest tests::known_four_point_pair_matches_python_oracle ... ok\ntest tests::optional_z3_backend_resolves_a_hard_five_point_threshold ... ok\ntest tests::order_twenty_identity_uses_no_explicit_hyperspace ... ok\ntest tests::structural_filter_accepts_certified_hyperspace_optima ... ok\ntest tests::two_point_hyperspace_is_equilateral ... ok\ntest tests::ultrametric_decomposition_matches_explicit_hyperspace_search ... ok\n\ntest result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 7 filtered out; finished in 0.14s\n\n"
+      }
+    ]
+  },
+  "median_seconds": {
+    "baseline": 11.56749874993693,
+    "candidate": 0.14220054203178734
+  }
+}

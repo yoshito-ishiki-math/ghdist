@@ -1,0 +1,29 @@
+[package]
+name = "ghsp-rust-exact-search"
+version = "0.2.0"
+edition = "2024"
+description = "Exact finite Gromov-Hausdorff distances and Hausdorff hyperspace computations"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/yoshito-ishiki-math/ghdist"
+publish = false
+default-run = "ghdist"
+autobins = false
+
+[profile.release]
+codegen-units = 1
+lto = "thin"
+
+[[bin]]
+name = "ghdist"
+path = "src/main.rs"
+
+[[bin]]
+name = "ghsp-rust-exact-search"
+path = "src/legacy_main.rs"
+
+[dependencies]
+serde_json = { version = "1.0.147", features = ["arbitrary_precision"] }
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2.178"

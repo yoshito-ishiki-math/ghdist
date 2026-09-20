@@ -1,0 +1,13 @@
+{
+  "pairs": [
+    [
+      "X.json",
+      "Y.json"
+    ],
+    [
+      "ultrametric-X.json",
+      "ultrametric-Y.json"
+    ]
+  ],
+  "mode": "hyperspace"
+}

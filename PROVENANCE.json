@@ -1,0 +1,20 @@
+{
+  "schema": "ghdist.public-provenance.v1",
+  "version": "0.2.0",
+  "repository": "yoshito-ishiki-math/ghdist",
+  "source_project": "Math-Research-GHsp",
+  "method": "Standalone extraction and subsequent refactoring; public files selected by PUBLIC-FILES.txt.",
+  "license_origin": "Unmodified LICENSE from source project root; existing copyright notice retained.",
+  "original_extraction_sha256": {
+    "Cargo.toml": "645ee67dae9b2c931a513e38cba0ef19ac716b3366ce9a25c33843d550b539a7",
+    "Cargo.lock": "c5f3810d5a1ca023d6c995b5f1cd7eb4b225af3f26580f5fede1b6d1f96c440f",
+    "src/main.rs": "9443fab70052d2b250f648fa144d8817afee1139ff6096163692818f493693f0",
+    "LICENSE": "f3c924f5d1930cfe42aa0912735f22b0174da2459add8106e13337269d0811c8"
+  },
+  "original_extraction_baseline": {
+    "path": "benchmarks/baseline-0.1.0.tar.gz",
+    "sha256": "c784485a4f15def2251be7a8d52fc61fdf562cb66928200880ca204e5b28b336"
+  },
+  "source_manifest": "SOURCE-MANIFEST.json",
+  "private_repository_history_included": false
+}
